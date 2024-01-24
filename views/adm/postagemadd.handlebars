@@ -1,0 +1,25 @@
+<h2 style="text-align: center;">Criando postagem</h2>
+<div class="card mt-4" style="max-width: 500px; margin: auto;">
+    <div class="card-body">
+        <form action="/adm/postagem/nova" method="post" autocomplete="off">
+            <label for="titulo" class="mt-2">Título:</label>
+            <input type="text" name="titulo" id="titulo" class="form-control mt-2" placeholder="Insira o título">
+            <label for="slug" class="mt-2">Slug:</label>
+            <input type="text" name="slug" id="slug" class="form-control mt-2" placeholder="Insira o slug">
+            <label for="descricao" class="mt-2">Descrição:</label>
+            <input type="text" name="descricao" id="descricao" class="form-control mt-2" placeholder="Insira a descrição">
+            <label for="conteudo" class="mt-2">Conteúdo:</label><br>
+            <textarea name="conteudo" id="conteudo" cols="60" class="form-control mt-2" placeholder="Digite o conteúdo"></textarea>
+            <label for="categoria" class="mt-3">Categorias:</label>
+            <select name="categoria" id="categoria" class="form-control mt-2">
+                {{#each categorias}}
+                    <option value="{{_id}}">{{nome}}</option>
+                {{else}}
+                    <option value="0">Nenhuma categoria registrada</option>
+                {{/each}}
+            </select>
+            <button type="submit" class="btn btn-success mt-3" style="margin-right: .8rem;">Adicionar</button>
+            <a href="/adm/postagem"><button type="button" class="btn btn-danger mt-3">Cancelar</button></a>
+        </form>
+    </div>
+</div>

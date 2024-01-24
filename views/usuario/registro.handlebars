@@ -1,0 +1,20 @@
+{{#each erros}}
+<div class="alert alert-danger">{{texto}}</div>
+{{else}}
+{{/each}}
+<h1 style="text-align: center;" class="mb-4">Criando sua conta:</h1>
+<div class="card" style="max-width: 600px; margin: auto;">
+    <div class="card-body">
+        <form action="/user/registro" method="post" autocomplete="off">
+            <label for="username" class="mb-2">Usuário:</label>
+            <input type="text" name="username" id="username" placeholder="Crie seu usuário" class="form-control mb-1" required>
+            <label for="email" class="mb-2">Email:</label>
+            <input type="email" name="email" id="email" placeholder="insira seu usuário" class="form-control mb-1" required>
+            <label for="password" class="mb-2">Senha:</label>
+            <input type="password" name="password" id="password" placeholder="Crie sua senha" class="form-control mb-1" required>
+            <label for="password" class="mb-2">Repita sua senha:</label>
+            <input type="password" name="password2" id="password" placeholder="Repita sua senha" class="form-control mb-1" required>
+            <button type="submit" class="btn btn-success mt-4">Criar conta</button>
+        </form>
+    </div>
+</div>

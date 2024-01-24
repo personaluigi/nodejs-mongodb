@@ -1,0 +1,24 @@
+{{#each error}}
+<div class="alert alert-danger" style="max-width: 450px; margin: 1rem auto;">{{texto}}</div>
+{{/each}}
+
+<h1 class="mb-5" style="text-align: center;">Editando a categoria</h1>
+
+<div class="card" style="max-width: 450px; margin: auto;">
+    <div class="card-body">
+        <form action="/adm/categorias/edit" method="post" autocomplete="off">
+            <input type="hidden" name="id" id="id" value="{{categoria._id}}">
+            <label>Nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="Nome da categoria" class="form-control mt-1"
+                value="{{categoria.nome}}">
+
+            <label class="mt-2">Slug:</label>
+            <input type="text" name="slug" id="slug" placeholder="Slug da categoria" class="form-control mt-1"
+                value="{{categoria.slug}}">
+
+            <button type="submit" class="btn btn-warning mt-4" style="margin-right: .8rem;">Editar</button>
+            <a href="/adm/categorias"><button type="button" class="btn btn-danger mt-4">Cancelar</button></a>
+        </form>
+    </div>
+</div>
+<hr>

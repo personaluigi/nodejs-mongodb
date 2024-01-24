@@ -1,0 +1,14 @@
+<h1>Página de categorias:</h1>
+<hr>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+  {{#each categorias}}
+    <section style="border: 2px dotted gray; padding: 1rem; border-radius: 15px;">
+      <h4>{{nome}}</h4>
+      <p>{{slug}}</p>
+      <a href="/categorias/{{slug}}"><button type="button" class="btn btn-primary">Acessar</button></a>
+    </section>
+  {{else}}
+    <h3>Nenhuma categoria listada</h3>
+  {{/each}}
+</div>

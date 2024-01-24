@@ -1,0 +1,29 @@
+<h1 class="mb-3" style="text-align: center;">Editando a postagem</h1>
+<div class="card" style="max-width: 450px; margin: auto;">
+    <div class="card-body">
+        <form action="/adm/postagem/edit" method="post" autocomplete="off">
+            <input type="hidden" name="id" id="id" value="{{postagem._id}}">
+            <label>Título:</label>
+            <input type="text" name="titulo" id="titulo" class="form-control mt-1" value="{{postagem.titulo}}">
+
+            <label class="mt-2">Slug:</label>
+            <input type="text" name="slug" id="slug" class="form-control mt-1" value="{{postagem.slug}}">
+
+            <label class="mt-2">Descrição:</label>
+            <input type="text" name="descricao" id="descricao" class="form-control mt-1" value="{{postagem.descricao}}">
+
+            <label class="mt-2">Conteúdo:</label>
+            <textarea name="conteudo" id="conteudo" cols="60" class="form-control mt-2">{{postagem.conteudo}}</textarea>
+
+            <label class="mt-2">Categoria:</label>
+            <select name="categoria" id="categoria" class="form-control mt-2">
+                {{#each categoria}}
+                <option value="{{_id}}">{{nome}}</option>
+                {{/each}}
+            </select>
+
+            <button type="submit" class="btn btn-warning mt-4" style="margin-right: .8rem;">Editar</button>
+            <a href="/adm/postagem"><button type="button" class="btn btn-danger mt-4">Cancelar</button></a>
+        </form>
+    </div>
+</div>
